@@ -7,7 +7,7 @@ This project contains source code and supporting files for a serverless applicat
 
 This project was created to ejemplify how several layers can be build with Python with out dependancy and How can be tested with out a lambda functions. This is a common approach when you need none dependency between your serverless application and your layers and it help to reuse your code not only between lambdas but also across diferent projects.
 
-![N|Solid]('Layers deployment Estrategy.png')
+![N|Solid](['Layers deployment Estrategy.png'](https://raw.githubusercontent.com/hsaenzG/python-layers-with-sam/main/Layers%20deployment%20Estrategy.png))
 
 ## Deploy Application
 
