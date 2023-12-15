@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: sam-layers-python
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  Environment:
+    Type: String
+    Default: develop
+  RetentionPolicy:
+    Type: String
+    Default: Retain
+    AllowedValues: 
+      - Retain
+      - Delete
+    
+
+Resources:
+  mathLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Layer ${ResourceName}
+        - ResourceName: mathLayer
+      ContentUri: src/mathLayer
+      RetentionPolicy: !Ref RetentionPolicy
+    Metadata:
+      BuildMethod: python3.11
+  searchLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      Description: !Sub
+        - Stack ${AWS::StackName} Layer ${ResourceName}
+        - ResourceName: searchLayer
+      ContentUri: src/searchLayer
+      RetentionPolicy: !Ref RetentionPolicy
+    Metadata:
+      BuildMethod: python3.11
